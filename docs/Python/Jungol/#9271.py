@@ -24,5 +24,5 @@ for i in range(S, E+1, 2):
 S, E = map(int, input("2개의 홀수를 입력하세요: ").split())
 
 for i in range(S, E+1):
-    if i % 2 == 1:      # 조건문으로 i 나누가 2의 몫이 1일 때만 출력이 되도록 설정
+    if i % 2 == 1:      # 조건문으로 i 나누가 2의 몫이 1일 때만 출력이 되도록 설정, S와 E가 홀수가 아니어도 출력 가능
         print(i)
