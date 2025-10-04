@@ -1,11 +1,11 @@
 i = 0
+N = -1   # 처음에 0이 아닌 값으로 시작
 
-while True:
+while N != 0:          # 0이 들어오기 전까지만 반복
     N = int(input())
-    if N == 0:        # 0이면 종료
-        break
-    if N <= 0:        # 음수이거나 0 이면 더하지 않고 건너뜀
+    if N <= 0:         # 음수나 0은 건너뛰기
         continue
-    i += N            # 양수만 더함
+    i += N             # 양수만 더하기
 
-print(i) 
+print(i)               # ← while문 끝나고 최종 합 출력
+
