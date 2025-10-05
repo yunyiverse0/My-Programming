@@ -1,5 +1,5 @@
 i = 0
-N = -1
+N = -1            
 num =[]
 
 while True:
@@ -10,6 +10,7 @@ while True:
         continue
     i += N 
     num.append(i)
+
 print(f"count =",len(num))
 print(f"total = {i}")
 print(f"avg =", int(i / len(num)))
