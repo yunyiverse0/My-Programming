@@ -17,5 +17,5 @@ for i in range(N):
 # 지피티가 짜준 코드 틀
 N = int(input())
 
-for i in range(N):          # i는 0부터 N-1까지
+for i in range(N):   
     print(" " * i + "*" * (2 * (N - i) - 1))
