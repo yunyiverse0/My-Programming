@@ -5,4 +5,4 @@ N = int(input())
 alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
 for i in range(N, 27, N):        
-    print(alphabet[i-1], end='')    #인덱스는 0부터 시작하는데 i는 1부터 시작이라 시작점 맞
+    print(alphabet[i-1], end='')    #인덱스는 0부터 시작하는데 i는 1부터 시작이라 시작점 맞춤
