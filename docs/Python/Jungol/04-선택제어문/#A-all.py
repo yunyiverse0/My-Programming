@@ -27,7 +27,7 @@ elif a == 3:
 else:
     print('NO')
 
-#####################################9227
+#####################################9244
 a = int(input())
 
 if a == 2:
@@ -39,7 +39,25 @@ elif a >= 8 and a % 2 == 0:
 else:
     print(30)
 
-#####################################9228
+#####################################9245
+X = int(input())
+Y = int(input())
+O = input()
 
+if O == '+':
+    print('ans =',X+Y)
+elif O == '-':
+    print('ans =',X-Y)
+elif O == '*':
+    print('ans =',X*Y)
+else:
+    print('ans =',X%Y)
 
-#####################################9229
+#####################################9246
+A, B, C = map(int, input().split())
+
+a = A if A > B and A > C else (B if B > C else C)
+b = A if A < B and A < C else (B if B < C else C)
+
+print(a - b)
+
