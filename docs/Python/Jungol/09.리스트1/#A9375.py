@@ -8,11 +8,11 @@ for i in range(N):
   n = int(input())
   A.append(n)
 
-a = "YES"
+a = "YES"    #우선은 "YES"라고 가정
 
-for j in range(1,N):
+for j in range(1,N):    #j-1을 해야하니까 1부터 시작 
   if A[j-1] > A[j]:
-    a = "NO"
+    a = "NO"            #단 한 번이라도 A[j-1] > A[j] 라면 a ="NO" 저장하고 바로 break
     break
 
 print(a)
