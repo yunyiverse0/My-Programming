@@ -1,7 +1,8 @@
 <h2 align="center"<i>Unicentre Archive</i></h2>
 
-<h6 align="center">실행되는 코드들만 있음</h6>
+<h6 align="center">코드 저장소</h6>
 
 <p align="center">
-  <img src="https://i.pinimg.com/736x/fa/50/eb/fa50eb650bba3d00035879d79ee700de.jpg" width="300">
+  <img src="<img width="1179" height="821" alt="image" src="https://github.com/user-attachments/assets/9620753f-e95c-4849-bbcd-fc79eedc12c0" />
+" width="300">
 </p>
