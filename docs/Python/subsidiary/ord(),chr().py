@@ -8,4 +8,4 @@
 # (문자를 숫자로, 숫자를 문자로 변환)
 
 print(chr(97)) #a
-print(ord('a'))
+print(ord('a')) #97
