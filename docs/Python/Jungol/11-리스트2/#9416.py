@@ -10,8 +10,8 @@ for i in range(3):
     B.append(list(map(int,input().split())))
 
 
-for i in range(3):
-    for j in range(2):
+for i in range(3):            # 행, listA,B 중첩 리스트의 개수 3개
+    for j in range(2):        # 열, listA,B 중첩 리스트의 원소
         print(A[i][j] + B[i][j], end = ' ')
     print()
 
