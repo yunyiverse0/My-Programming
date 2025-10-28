@@ -1,4 +1,4 @@
-# cmd, terminal에서 실행하는 명령어들
+#cmd 또는 VS code terminal에서 실행하는 코드들cmd 또는 VS code terminal에서 실행하는 코드들
 
 # 1. 프로젝트 폴더 생성 및 이동
 mkdir flask_login_project      #mkdri -> 폴더를 새로 만들어주는 명령어 (mkdri A : A라는 폴더를 새로 만들어줌)
