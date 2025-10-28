@@ -10,5 +10,8 @@
   },
   "student": {
     "password": "hello"
+  },
+  "test": {
+    "password": "1234"
   }
 }
