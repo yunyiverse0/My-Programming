@@ -4,3 +4,12 @@ n = list(map(int,input().split()))
 N = [abs(i) for i in n]
 
 print(sum(N))
+####################################
+n = list(map(int,input().split()))
+N = []
+
+for i in n:
+    N.append(abs(i))
+
+print(sum(N))
+
