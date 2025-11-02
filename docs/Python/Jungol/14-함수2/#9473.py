@@ -4,7 +4,7 @@ n = list(map(int,input().split()))
 N = [abs(i) for i in n]
 
 print(sum(N))
-####################################
+####################################2
 n = list(map(int,input().split()))
 N = []
 
