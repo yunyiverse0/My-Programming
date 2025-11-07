@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>switch</title>
+    <style>
+  </style>
+</head>
+<body>
+  <h3>switch 문으로 커피 주문</h3>
+  <hr>
+  <script>
+    let price = 0;
+    let coffe = prompt("what coffee do you want?");
+    switch(coffe) {
+      case "esspresso":
+      case "에스프레소" : price = 2500;
+        break;
+      case "cappuccino" : price = 3000;
+        break;
+      case "cafe latte" : price = 3500;
+        break;
+      default:
+        price = 0;
+        document.write("There is no s" + coffe + "<br>");
+    }
+    if (price != 0) {
+      document.write("It is " + price + " Won<br>");
+    }
+</script>
+
+</body>
+</html>
