@@ -5,11 +5,11 @@ n = int(input())
 def f(x, y):
     if x == n:
         print(*y)
-        return
+        return        #여기서 끝내라는 뜻
     
     for i in range(1, 4):
         y.append(i)
-        f(x + 1, y)
+        f(x + 1, y)        #f(x+1,y)가 if조건에 걸려서 멈추기 전까지는 pop이 실행되지 않음
         y.pop()
 
 f(0, [])
