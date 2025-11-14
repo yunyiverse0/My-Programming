@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>break 문</title>
+    <style>
+  </style>
+</head>
+<body>
+  <h3>1에서 얼마까지 더해야 입력받은 수 n이 될까?</h3>
+  <hr>
+  <script>
+    let n = prompt("Enter a number:",0);
+    n = parseInt(n);
+
+    let sum = 0;
+    for (let i = 1; ; i++) {
+        sum += i;
+        if (sum >= n) {
+            document.write("1에서 " + i + "까지 더헤야" + n);
+            break;
+        }
+    }
+</script>
+</body>
+</html>
