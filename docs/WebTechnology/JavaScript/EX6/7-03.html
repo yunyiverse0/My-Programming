@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Array 객체로 배열 만들기</title>
+    <script>
+    </script>
+</head>
+<body>
+  <h3>Array 객체로 배열 만들기</h3>
+  <hr>
+  <script>
+    let dgrees = new Array();
+    dgrees[0] = 15.1;
+    dgrees[1] = 15.4;
+    dgrees[2] = 16.1;
+    dgrees[3] = 17.5;
+    dgrees[4] = 19.2;
+    dgrees[5] = 21.4;
+
+    let sum = 0;
+    for(let i = 0; i < dgrees.length; i++)
+        sum += dgrees[i];
+
+    document.write("평균 온도 : " + sum/dgrees.length + "<br>");
+  </script>
+</body>
+</html>
