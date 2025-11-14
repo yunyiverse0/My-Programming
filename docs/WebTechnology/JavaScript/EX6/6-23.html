@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>javascript 전역함수</title>
+    <script>
+        function evalparesIntIsNaN() {
+            let res = eval("2 + 3 + 4 + 6");
+            document.write("eval(\"2+3+4+6\):" + res + "<br>");
+            let m = parseInt("32");
+            document.write("parseInt(\"32\"):" + m + "<br>");
+            let n = parseInt("0x32");
+            document.write("parseInt(\"0x32\"):" + n + "<br>");
+
+            n = parseInt("hello");
+                document.write("'hello' is not a number bro lol")
+        }
+    </script>
+</head>
+<body>
+  <h3>eval(), parseInt(), isNaN()</h3>
+  <hr>
+  <script>
+    evalparesIntIsNaN();
+</script>
+</body>
+</html>
