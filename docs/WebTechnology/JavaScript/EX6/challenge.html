@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>for 문</title>
+    <style>
+  </style>
+</head>
+<body>
+  <h3>별 문자 출력하기</h3>
+  <hr>
+  <script>
+    let n = prompt("Enter a number:",0);
+    n = parseInt(n);
+    for (let i = 1; i <= n; i++) {
+        for (let j = 1; j <= i; j++) {
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+</script>
+</body>
+</html>
