@@ -17,6 +17,8 @@ print('bedrooms:',J.bed)
 print('bathrooms:',J.bat)
 
 #####################클래스 안에 출력 기능 넣기
+# 실제 회사 코드에선  __init__에 변수저장, 기본값설정, 객체준비 정도로만 씀 (정올은 연습용 코드이기에 괜찮음) >> 객체를 만들었는데 갑자기 출력되는 게 실제에선 위험이 있음
+
 class J:
     def __init__(self):
         self.loc, self.bed, self.bat = input().split()
