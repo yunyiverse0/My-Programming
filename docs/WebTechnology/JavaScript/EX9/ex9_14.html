@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>onload로 이미지 크기 출력</title>
+    <script>
+        function changeImage() {
+            let sel = document.getElementById("sel");
+            let img = document.getElementById("myImg");
+
+            img.onload = function() {
+                let mySpan = document.getElementById("mySpan");
+                mySpan.innerHTML = img.width + " x " + img.height;
+            }
+
+            let index = sel.selectedIndex;
+            img.src = sel.options[index].value;
+        }
+    </script>
+</head>
+
+<body onload="changeImage()">
+    <h3>onload로 이미지 크기 출력</h3>
+    <hr>
+
+    <form>
+        <select id="sel" onchange="changeImage()">
+            <option value="media/apple.png">apple</option>
+            <option value="media/banana.png">banana</option>
+            <option value="media/mango.png">mango</option> 
+        </select>
+
+        <span id="mySpan">이미지 크기</span>
+    </form>
+
+    <p><img id="myImg" src="media/apple.png" alt="."></p>
+</body>
+</html>
