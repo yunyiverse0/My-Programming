@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>My Wishlist</title>
+    <style>
+        /* 간단한 스타일링 */
+        .product-card { border: 1px solid #ddd; padding: 10px; margin: 10px; border-radius: 8px; }
+        .category-tag { background: #eee; padding: 2px 5px; font-size: 0.8em; }
+        
+        /* 모달(선택창) 스타일 */
+        #linkModal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); }
+        .modal-content { background: white; margin: 15% auto; padding: 20px; width: 300px; text-align: center; border-radius: 10px; }
+        .platform-btn { display: block; width: 100%; margin: 10px 0; padding: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1>🛍️ 내 장바구니 (Wishlist)</h1>
+
+    <form action="/" method="get">
+        <select name="category">
+            <option value="">전체</option>
+            <option value="상의">상의</option>
+            <option value="하의">하의</option>
+        </select>
+        <input type="text" name="search" placeholder="상품 검색...">
+        <button type="submit">검색</button>
+    </form>
+
+    <div id="product-list">
+        {% for product in products %}
+        <div class="product-card">
+            <h3>{{ product.name }} <span class="category-tag">{{ product.category }}</span></h3>
+            
+            <button onclick='handleBuyClick({{ product.links | tojson }})'>
+                구매하러 가기
+            </button>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div id="linkModal">
+        <div class="modal-content">
+            <h3>어디서 구매하시겠어요?</h3>
+            <div id="modal-buttons">
+                </div>
+            <button onclick="closeModal()">취소</button>
+        </div>
+    </div>
+
+    <script>
+        // 구매 버튼 클릭 시 실행되는 로직
+        function handleBuyClick(links) {
+            if (links.length === 0) {
+                alert("등록된 구매 링크가 없습니다.");
+                return;
+            }
+
+            // 1. 링크가 하나뿐이면 바로 이동 (예: 자사몰만 있을 때)
+            if (links.length === 1) {
+                window.open(links[0].buy_url, '_blank');
+            } 
+            // 2. 링크가 여러 개면 모달창 띄우기 (예: 무신사 & 지그재그 둘 다 있을 때)
+            else {
+                showModal(links);
+            }
+        }
+
+        // 모달 띄우기 함수
+        function showModal(links) {
+            const modal = document.getElementById('linkModal');
+            const btnContainer = document.getElementById('modal-buttons');
+            
+            btnContainer.innerHTML = ""; // 기존 버튼 초기화
+
+            // 각 플랫폼별 버튼 생성
+            links.forEach(link => {
+                const btn = document.createElement('button');
+                btn.className = 'platform-btn';
+                btn.innerText = link.platform_name + "에서 보기"; // 예: "무신사에서 보기"
+                btn.onclick = function() {
+                    window.open(link.buy_url, '_blank');
+                    closeModal();
+                };
+                btnContainer.appendChild(btn);
+            });
+
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('linkModal').style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
