@@ -1,0 +1,46 @@
+-- 1. 데이터베이스 생성 (이름 변경: shopping_list_project)
+CREATE DATABASE IF NOT EXISTS shopping_list_project 
+  DEFAULT CHARACTER SET utf8mb4 
+  DEFAULT COLLATE utf8mb4_unicode_ci;
+
+-- 2. 생성한 데이터베이스 사용 선언
+USE shopping_list_project;
+
+-- 3. 기존 테이블 초기화 (순서 중요)
+DROP TABLE IF EXISTS product_links;
+DROP TABLE IF EXISTS products;
+
+-- 4. 상품 기본 정보 테이블 생성
+CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL COMMENT '상품명',
+    category VARCHAR(50) COMMENT '카테고리',
+    image_url TEXT COMMENT '이미지 주소',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 5. 상품별 구매 링크 테이블 생성
+CREATE TABLE product_links (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    product_id INT NOT NULL,
+    platform_name VARCHAR(50) NOT NULL COMMENT '쇼핑몰 이름',
+    buy_url TEXT NOT NULL COMMENT '구매 링크',
+    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
+);
+
+-- 6. 테스트 데이터 입력
+INSERT INTO products (name, category, image_url) VALUES 
+('나이키 윈드브레이커', '상의', 'https://dummyimage.com/300x300/000/fff&text=Nike'),
+('와이드 데님 팬츠', '하의', 'https://dummyimage.com/300x300/000/fff&text=Denim'),
+('아디다스 운동화', '신발', 'https://dummyimage.com/300x300/000/fff&text=Adidas');
+
+INSERT INTO product_links (product_id, platform_name, buy_url) VALUES 
+(1, '무신사', 'https://www.musinsa.com'),
+(1, '지그재그', 'https://zigzag.kr'),
+(2, '에이블리', 'https://a-bly.com'),
+(3, '아디다스 공홈', 'https://www.adidas.co.kr'),
+(3, '무신사', 'https://www.musinsa.com'),
+(3, 'KREAM', 'https://kream.co.kr');
+
+-- 확인
+SELECT * FROM products;
